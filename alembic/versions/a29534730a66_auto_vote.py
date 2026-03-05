@@ -28,7 +28,7 @@ def upgrade() -> None:
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ondelete='CASCADE'),
     sa.PrimaryKeyConstraint('user_id', 'post_id')
     )
-    op.drop_column('posts', 'publsihed')
+    op.drop_column('posts', 'published')
     # ### end Alembic commands ###
 
 
