@@ -9,10 +9,9 @@ from .config import settings
 
 SQLALCHEMY_DATABASE_URL = os.environ.get("SQLALCHEMY_DATABASE_URL")
 
-SQLALCHEMY_DATABASE_URL = os.environ.get("DATABASE_URL")
-
 if not SQLALCHEMY_DATABASE_URL:
-    raise ValueError("DATABASE_URL environment variable is not set!")
+    raise ValueError(
+        "SQLALCHEMY_DATABASE_URL environment variable is not set!")
 
 if SQLALCHEMY_DATABASE_URL.startswith("postgres://"):
     SQLALCHEMY_DATABASE_URL = SQLALCHEMY_DATABASE_URL.replace(
